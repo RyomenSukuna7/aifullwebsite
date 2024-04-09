@@ -1,0 +1,54 @@
+/* partical js css */
+#tsparticles{
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+/* html content css above the partical js */
+
+#homeMainTitles{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    /* margin: auto;
+    position: absolute;
+    top:40%;
+    left: 40%;
+    margin-right: -10vw; */
+}
+#homeMainTitle{
+    margin: auto;
+    position: absolute;
+    top:30%;
+    left: 36%;
+    margin-right: -10vw;
+}
+#homeMainTitleColor{
+    color: white;
+    font-size: 5vw;
+    text-shadow: 10px 12px 10px blue;
+    font-size: clamp(50px,8vw,70px);
+    position: fixed;
+}
+#goToChatingPage{
+    margin-top: 7vh;
+    position: absolute;
+    top: 50%;
+    width:30vw;
+    padding-left: 40vw;
+    margin-left: -30vw;
+}
+#goToChatingPageButton{
+    background:rgba(157, 157, 252, 0.2);
+    /* background-color: transparent; */
+    width:16vw;
+    color: white;
+    height:5vh;
+    overflow: hidden;
+}
+

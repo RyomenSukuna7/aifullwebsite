@@ -1,95 +1,60 @@
+"use client"
+import mainPage from '@/app/page.module.css';
 import Image from "next/image";
-import styles from "./page.module.css";
+import React, {Suspense} from 'react';
+import { useRouter } from 'next/navigation';
+
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  let router=useRouter();
+  const submitButton=(e)=>{
+    e.preventDefault();
+    router.push('/feedback');
+  }
+  return(
+    <>
+        <div style={{zIndex:-1,position:"fixed",width:"100vw",height:"100vh"}}>
+        <Suspense fallback={<p>loding wait ......</p>}>
+              <Image src="/mountains.jpg" alt="please check your browers does not support js" layout='fill' objectFit='cover' />
+          </Suspense>  
+        </div> 
+      
+        <div id={mainPage.signUpForm}>
+          <div id={mainPage.signUpBorder} >
+                
+            <div id={mainPage.userDetails}>
+                <h1 id={mainPage.tileSignUp} style={{cursor:"pointer"}}><b>Sign Up</b></h1>
+                    <br/>
+              <form id={mainPage.space}> 
+                <div id="name">
+                    <label className={mainPage.userImage}> <span><Image src='/user.png' width="16" height="16"/></span></label>
+                        <input  type="text" className={mainPage.commonInputStyle} placeholder='Full Name'/>
+                </div>
+                <br/><br/><br/>
+                <div id="email">
+                    <label className={mainPage.userImage}> <span><Image src='/email.png' width="16" height="16"/></span></label>
+                        <input  type="email" className={mainPage.commonInputStyle} placeholder='Email'/>
+                </div>
+                <br/><br/><br/>
+                <div id="password">
+                    <label className={mainPage.userImage}> <span><Image src='/password.png' width="16" height="16"/></span></label>
+                        <input  type="password" className={mainPage.commonInputStyle} placeholder='Password'/><span className={mainPage.showPassword}><Image src="/showPassword.png" width="20" height="20"/></span>
+                </div>
+                <br/><br/><br/>
+                <div id="reender">
+                    <label className={mainPage.userImage}> <span><Image src='/reenterPassword.png' width="16" height="16"/></span></label>
+                        <input type="password" className={mainPage.commonInputStyle} placeholder='Reenter password'/>
+                </div>
+                <div id="submit">
+                        <input type="submit" value="Submit" className={mainPage.submitButton} onClick={submitButton}/>
+                </div>
+              </form>
+         </div>
+
         </div>
       </div>
+    </>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+  )
 }
+

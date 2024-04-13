@@ -25,8 +25,11 @@
     margin: auto;
     position: absolute;
     top:30%;
-    left: 36%;
-    margin-right: -10vw;
+    /* left: 38%; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* margin-right: -10vw; */
 }
 #homeMainTitleColor{
     color: white;
